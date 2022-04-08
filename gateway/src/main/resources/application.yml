@@ -1,0 +1,27 @@
+server:
+  port: 9903
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://@eureka.user.name@:@eureka.user.password@@localhost:9900/eureka
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: false
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: test-routs
+        uri: http://localhost:9901/test/get
+        predicates:
+          - Query=type,baidu

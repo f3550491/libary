@@ -1,0 +1,5 @@
+com\cxs\study\common\vo\basic\CommonResult.class
+com\cxs\study\common\vo\BorrowStatusEnum.class
+com\cxs\study\common\vo\Book.class
+com\cxs\study\common\vo\User.class
+com\cxs\study\common\vo\Borrow.class
